@@ -1,0 +1,89 @@
+.btnResposta{
+  border-radius: 10px;
+  padding: 15px;
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#iconeRepetir{
+  cursor: pointer;
+}
+
+.btnResposta:hover{
+  filter: brightness(93%);
+  font-weight: bold;
+  box-shadow: 1px 1px 5px 0px black;
+}
+
+#placar{
+  border-radius: 15px;
+  border: 2px solid black;
+  box-shadow: 5px 5px 15px;
+}
+
+.mr5{
+  margin-right: 5px;
+}
+
+.ml5{
+  margin-left: 5px;
+}
+
+.cor1{
+  background-color: #4dd0e1;
+}
+
+.cor2{
+  background-color: #3949ab;
+  color: white;
+}
+
+.cor3{
+  background-color: #e91e63;
+  color: white;
+}
+
+.cor4{
+  background-color:#9ccc65;
+}
+
+.cor5{
+  background-color: #fbc02d;
+}
+
+.cor6{
+  background-color: #90a4ae;
+}
+
+.cor7{
+  background-color:#ef9a9a;
+}
+
+.cor8{
+  background-color: #90caf9;
+}
+
+.cor9{
+  background-color:#c5e1a5;
+}
+
+.cor10{
+  background-color: #ffe082;
+}
+
+.cor11{
+  background-color: #d1c4e9;
+}
+
+.cor12{
+  background-color: #64ffda;
+}

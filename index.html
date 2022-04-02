@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerte a Nota</title>
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" href="./css/estilos.css">
+
+  <link rel="preload" href="./assets/img/nota.png" as="image">
+  <link rel="preload" href="./assets/img/spinner.gif" as="image">
+  <link rel="preload" href="./assets/img/right.png" as="image">
+  <link rel="preload" href="./assets/img/wrong.png" as="image">
+  
+</head>
+<body>
+  <div class="container">
+
+    <div class="row d-md-none" style="height: 60px;"></div>
+
+    <div class="row bg-light fixed-top d-md-none align-content-center justify-content-center shadow" style="height: 60px;" id="barraTopo">
+      <div class="col-12 col-sm-8">
+        <div class="row justify-content-center">
+          <div class="col-6 text-center">
+            <span class="d-block" style="font-weight: 500;font-size: calc(1.375rem + 1.5vw);">
+              <span id="barraAcertos">0</span> / 
+              <span id="barraRodadas">0</span>
+            </span>
+          </div>
+          <div class="col-6 align-self-center">
+            <div class="row justify-content-evenly">
+              <div class="col-2 col-sm-2">
+                <img class="img-fluid" src="./assets/img/nota.png" id="iconeResp">
+              </div>
+              <div class="col-2 col-sm-2">
+                <img class="img-fluid" src="./assets/img/repeat.png" id="iconeRepetir">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="cima">
+      <div class="col-12">
+        <div class="row justify-content-center mb-4">
+          <div class="col-8 col-sm-8 col-md-7 col-lg-5 col-xl-5 col-xxl-4 display-1 text-center pb-3 mt-3" id="placar">
+            <span id="acertos">0</span>
+            /
+            <span id="rodadas">0</span>
+          </div>
+        </div>
+    
+        <div class="row justify-content-center mb-3">
+          <div class="col-4 col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2">
+            <img class="img-fluid" src="./assets/img/nota.png" id="respImg">
+          </div>
+        </div>
+    
+        <div class="row justify-content-center p-2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-8 col-xxl-7">
+            <input type="range" class="form-range" min="0" max="100" value="2" step="1" id="volSlider">
+          </div>
+        </div>
+    
+        <div class="row justify-content-center p-2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-8 col-xxl-7">
+            <div class="row">
+              <div class="col-6 d-grid pe-1">
+                <a href="#" class="btn btn-primary" id="btnStart">Começar</a>
+              </div>
+              <div class="col-6 d-grid ps-1">
+                <a href="#" class="btn btn-warning" id="btnRestart">Zerar</a>
+              </div>
+              <div class="col-12 d-grid mt-2">
+                <a href="#" class="btn btn-success" id="btnRepetir">Repetir</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center p-2">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-8 col-xxl-7">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row justify-content-center p-2" id="baixo" style="overflow: auto;">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-8 col-xxl-7">
+        <div class="row text-center" id="listaRespostas">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+          <span class="btnResposta cor1 me-md-1 me-sm-1" id="0">Segunda Menor</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor2 ms-md-1 me-lg-1 ms-sm-1 me-md-1" id="1">Segunda Maior</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor3 me-md-0 ms-lg-1 me-lg-0 me-sm-1 ms-md-1" id="2">Terça Menor</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor4 ms-md-0 me-md-1 ms-lg-0 me-lg-1 ms-sm-1" id="3">Terça Maior</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor5 me-md-1 ms-md-1 ms-lg-1 me-sm-1" id="4">Quarta Justa</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor6 ms-md-1 ms-sm-1" id="5">Quinta Diminuta</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor7 me-md-1 me-sm-1" id="6">Quinta Justa</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor8 ms-md-1 me-lg-1 ms-sm-1 me-md-1" id="7">Sexta Menor</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor9 me-md-0 ms-md-1 ms-lg-1 me-lg-0 me-sm-1" id="8">Sexta Maior</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor10 ms-md-0 me-md-1 ms-lg-0 me-lg-1 ms-sm-1" id="9">Setima Menor</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor11 me-md-1 ms-md-1 ms-lg-1 me-sm-1" id="10">Setima Maior</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <span class="btnResposta cor12 ms-md-1 ms-sm-1" id="11">Oitava Justa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/scripts.js"></script>
+</body>
+</html>
